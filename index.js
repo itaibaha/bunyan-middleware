@@ -106,15 +106,6 @@ module.exports = function (options, logger) {
       }
       res.log[level](reqFinishData, 'request finish')
     })
-    res.on('close', function () {
-      res.log.info(
-          { req: req
-          , res: res
-          , duration: getDuration(start)
-          }
-        , 'request socket closed'
-        )
-    })
 
     next()
   }
