@@ -88,7 +88,7 @@ module.exports = function (options, logger) {
     if (requestStart || verbose) {
       var reqStartData = { req: req }
       if (verbose) reqStartData.res = res
-      req.log[level](reqStartData, 'request start')
+      req.log[level](reqStartData, 'request start - logger')
     }
     res.on('finish', function() {
       var reqFinishData =
